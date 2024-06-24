@@ -66,7 +66,7 @@
     (with-open-file (stream (merge-pathnames file-name directory)
                             :direction :output
                             :if-exists :supersede)
-      (funcall 'write-default-python-header library stream omit-init-call library-path)
+      (write-default-python-header library stream omit-init-call library-path)
       (write-string text-between-header-and-exports stream)
       (terpri stream)
       (let* ((api-exports 
